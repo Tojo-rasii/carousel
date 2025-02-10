@@ -1,0 +1,41 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .carousel-slide-section {
+     width: 100%;
+     overflow-x: hidden;
+     position: relative;
+ }
+
+ /* img {
+     width: 5em;
+     height: auto;
+ } */
+
+ .carousel-img-article {
+     display: flex;
+     flex-direction: row;
+     /* gap: 1em; */
+     height: 50vh;
+
+     transition: transform 1s ease-in-out;
+     scroll-snap-type: x mandatory;
+     justify-content: flex-start;
+     background: red;
+ }
+
+ .carousel-img-article img {
+     width: 100%;
+     aspect-ratio: 14/2;
+     object-fit: cover;
+ }
+
+ @media (max-width: 768px) {
+     .carousel-img-article img {
+         width: 100%;
+         height: auto;
+     }
+ }
