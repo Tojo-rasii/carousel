@@ -7,4 +7,4 @@ function scrollCarousel() {
     track.style.transform = `translateX(-${index * 100}%)`;
 }
 
-setInterval(scrollCarousel, 5000);
+setInterval(scrollCarousel, 100);

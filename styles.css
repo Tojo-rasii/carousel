@@ -5,7 +5,7 @@
  }
 
  .carousel-slide-section {
-     width: 100%;
+     width: 100vw;
      overflow-x: hidden;
      position: relative;
  }
@@ -21,10 +21,25 @@
      /* gap: 1em; */
      height: 50vh;
 
-     transition: transform 1s ease-in-out;
+     /* transition: transform 1s normal; */
      scroll-snap-type: x mandatory;
      justify-content: flex-start;
      background: red;
+
+     animation: translate 10s linear infinite;
+     width: 100vw;
+     /* Permet d'éviter les coupures */
+ }
+
+ @keyframes translate {
+
+     0% {
+         transform: translateX(0);
+     }
+
+     100% {
+         transform: translateX(-502.5%);
+     }
  }
 
  .carousel-img-article img {
