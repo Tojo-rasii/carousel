@@ -1,56 +1,72 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
- .carousel-slide-section {
-     width: 100vw;
-     overflow-x: hidden;
-     position: relative;
- }
+    body {
+        background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
 
- /* img {
-     width: 5em;
-     height: auto;
- } */
+    }
 
- .carousel-img-article {
-     display: flex;
-     flex-direction: row;
-     /* gap: 1em; */
-     height: 50vh;
+    .carousel-slide-section {
+        width: 50%;
+        overflow-x: hidden;
+        position: relative;
+        display: inline-flex;
+        /* height: 100vh; */
+        margin: 0 auto;
+        /* background: green; */
+        mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 128px), transparent 100%);
+    }
 
-     /* transition: transform 1s normal; */
-     scroll-snap-type: x mandatory;
-     justify-content: flex-start;
-     background: red;
+    .carousel-img-article {
+        display: flex;
+        flex-direction: row;
+        gap: 5em;
+        justify-content: space-between;
+    }
 
-     animation: translate 10s linear infinite;
-     width: 100vw;
-     /* Permet d'éviter les coupures */
- }
+    .carousel-img-article ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: max-content;
+        scroll-snap-type: x mandatory;
+        gap: 5em;
+        justify-content: flex-start;
+        /* background: red; */
+        animation: translate 25s linear infinite;
+        width: max-content;
+        /* margin: 0 auto; */
+    }
 
- @keyframes translate {
 
-     0% {
-         transform: translateX(0);
-     }
+    @keyframes translate {
+        from {
+            transform: translateX(0);
+        }
 
-     100% {
-         transform: translateX(-502.5%);
-     }
- }
+        to {
+            transform: translateX(-150%);
+        }
+    }
 
- .carousel-img-article img {
-     width: 100%;
-     aspect-ratio: 14/2;
-     object-fit: cover;
- }
+    .carousel-img-article img {
+        /* width: 100%; */
+        /* aspect-ratio: 14/2; */
+        object-fit: contain;
+        max-width: max-content;
+        max-height: max-content;
+        width: 8em;
+        height: 8em;
 
- @media (max-width: 768px) {
-     .carousel-img-article img {
-         width: 100%;
-         height: auto;
-     }
- }
+        max-width: none;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-img-article img {
+            width: 100%;
+            height: auto;
+        }
+    }

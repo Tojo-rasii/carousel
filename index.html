@@ -4,32 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Infinite Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(15 23 42);
+        }
+
+        .carousel-slide-section {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            margin: 0 auto;
+            mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 128px), transparent 100%);
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 3em;
+            width: max-content;
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-track ul {
+            display: flex;
+            gap: 3em;
+            list-style: none;
+            padding: 0;
+        }
+
+        .carousel-track img {
+            width: 8em;
+            height: 8em;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <main>
-            <section class="carousel-slide-section">
-                <article class="carousel-img-article" id="carousel-img-article">
-                    <img src="https://cdn.pixabay.com/photo/2020/08/02/09/25/jersey-5457156_1280.jpg" alt="Image 1">
-                    <img src="https://cdn.pixabay.com/photo/2018/07/29/23/31/football-3571389_960_720.jpg"
-                        alt="Image 2">
-                    <img src="https://cdn.pixabay.com/photo/2018/03/26/19/49/food-3263812_1280.jpg" alt="Image 3">
-                    <img src="https://cdn.pixabay.com/photo/2016/05/16/14/31/real-madrid-1395798_1280.jpg"
-                        alt="Image 4">
-                    <img src="https://cdn.pixabay.com/photo/2013/03/03/14/58/fabio-coentrao-89568_960_720.jpg"
-                        alt="Image 5">
-                    <img src="https://cdn.pixabay.com/photo/2020/08/02/09/25/jersey-5457156_1280.jpg" alt="Image 1">
+    <section class="carousel-slide-section">
+        <div class="carousel-track" id="carousel">
+            <ul id="logo-list">
+                <li><img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
+                        alt="Barcelona Logo"></li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid Logo">
+                </li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="Chelsea Logo"></li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"
+                        alt="Manchester City Logo"></li>
+            </ul>
+        </div>
+    </section>
 
-                </article>
+    <script>
+        const carousel = document.getElementById("carousel");
+        const logoList = document.getElementById("logo-list");
 
-            </section>
-        </main>
-    </div>
-
-    <!-- <script src="script.js"></script> -->
+        // Cloner les logos pour créer un effet infini
+        const clone = logoList.cloneNode(true);
+        carousel.appendChild(clone);
+    </script>
 </body>
 
 </html>
