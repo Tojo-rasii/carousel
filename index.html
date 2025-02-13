@@ -28,10 +28,8 @@
         .carousel-track {
             display: flex;
             flex-wrap: nowrap;
-            gap: 3em;
             width: max-content;
             animation: scroll 10s linear infinite;
-            padding-right: 3em;
             /* Correction pour éviter le micro-arrêt */
         }
 
@@ -47,14 +45,19 @@
 
         .carousel-track ul {
             display: flex;
-            gap: 3em;
             list-style: none;
             padding: 0;
         }
 
+        .carousel-track ul li {
+            
+            padding-inline: 3em;
+    
+        }
+
         .carousel-track img {
-            width: 8em;
-            height: 8em;
+            width: 5em;
+            height: 5em;
             object-fit: contain;
         }
     </style>
