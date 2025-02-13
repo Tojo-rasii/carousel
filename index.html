@@ -27,9 +27,12 @@
 
         .carousel-track {
             display: flex;
+            flex-wrap: nowrap;
             gap: 3em;
             width: max-content;
-            animation: scroll 15s linear infinite;
+            animation: scroll 10s linear infinite;
+            padding-right: 3em;
+            /* Correction pour éviter le micro-arrêt */
         }
 
         @keyframes scroll {
@@ -76,7 +79,7 @@
         const carousel = document.getElementById("carousel");
         const logoList = document.getElementById("logo-list");
 
-        // Cloner les logos pour créer un effet infini
+        // Cloner les logos pour un effet infini
         const clone = logoList.cloneNode(true);
         carousel.appendChild(clone);
     </script>
